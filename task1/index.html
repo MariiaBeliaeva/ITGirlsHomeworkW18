@@ -22,111 +22,122 @@
     <!-- Доработать форму-опросник для владельцев котиков из прошлых заданий, сделав
     для нее валидацию через HTML5 -->
     <div class="wrapper">
-      <h1>Опросник для котолюбителей</h1>
-      <form>
-        <fieldset>
-          <legend><h2>Как вас зовут?</h2></legend>
-          <div>
-            <label for="petName">Кличка питомца</label>
-            <input type="text" id="petName" />
+      <h1 class="title">Опросник для котолюбителей</h1>
+      <div class="questionnaire">
+        <form action="#">
+          <div class="questionnaire__form">
+            <legend><h2>Как вас зовут?</h2></legend>
+            <div class="questionnaire__name">
+              <label for="petName">Кличка питомца</label>
+              <input class="questionnaire__item" type="text" id="petName" />*
+            </div>
+
+            <div class="questionnaire__name">
+              <label for="yourName">Ваше имя</label>
+              <input class="questionnaire__item" type="text" id="yourName" />*
+            </div>
           </div>
+        </form>
 
-          <div>
-            <label for="yourName">Ваше имя</label>
-            <input type="text" id="yourName" />
+        <form action="#">
+          <div class="questionnaire__form">
+            <legend><h2>Контактные данные</h2></legend>
+            <div class="questionnaire__contacts">
+              <label for="address">Адрес</label>
+              <input
+                class="questionnaire__item"
+                type="text"
+                id="address"
+                required
+                placeholder="Адрес"
+              />*
+            </div>
+
+            <div class="questionnaire__contacts">
+              <label for="phoneNumber">Телефон</label>
+              <input
+                class="questionnaire__item"
+                type="text"
+                id="phoneNumber"
+                required
+                placeholder="+7 ххх ххх хх хх"
+                pattern="/^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/"
+                minlength="10"
+                maxlength="20"
+              />*
+            </div>
+
+            <div class="questionnaire__contacts">
+              <label for="email">Электронная почта</label>
+              <input
+                class="questionnaire__item"
+                type="text"
+                id="email"
+                required
+                placeholder="Электронная почта"
+              />*
+            </div>
           </div>
-        </fieldset>
-      </form>
+        </form>
 
-      <form>
-        <fieldset>
-          <legend><h2>Контактные данные</h2></legend>
-          <div>
-            <label for="address">Адрес</label>
-            <input type="text" id="address" required placeholder="Адрес" />
+        <form action="#">
+          <div class="questionnaire__form">
+            <label for="breed"
+              ><h2>Порода питомца</h2>
+              <p>(по классификации Всемирной федерации кошек)</p></label
+            >
+            <select name="Порода" id="breed">
+              <option value="firstOption">Длинношёрстная</option>
+              <option value="secondOption">Полудлинношёрстная</option>
+              <option value="thirdOption">Короткошёрстная</option>
+              <option value="fourthOption">Ориентальная короткошёрстная</option>
+            </select>
+
+            <h2>Пол питомца</h2>
+            <label for="sex1">Самец</label>
+            <input type="radio" name="which" id="sex1" /> <br />
+            <label for="sex2">Самка</label>
+            <input type="radio" name="which" id="sex2" />
+
+            <h2>Тип питания</h2>
+            <input type="checkbox" id="food1" />
+            <label for="food1">Сухой корм</label> <br />
+            <input type="checkbox" id="food2" />
+            <label for="food2">Влажный корм</label> <br />
+            <input type="checkbox" id="food3" />
+            <label for="food3">Натуральный корм</label> <br />
+            <input type="checkbox" id="food4" />
+            <label for="food4">Смешанное питание</label>
           </div>
+        </form>
 
-          <div>
-            <label for="phoneNumber">Телефон</label>
-            <input
-              type="text"
-              id="phoneNumber"
-              required
-              placeholder="Номер телефона"
-            />
-          </div>
-
-          <div>
-            <label for="email">Электронная почта</label>
-            <input
-              type="text"
-              id="email"
-              required
-              placeholder="Электронная почта"
-            />
-          </div>
-        </fieldset>
-      </form>
-
-      <form action="">
-        <fieldset>
-          <label for="breed"
-            ><h2>Порода питомца</h2>
-            <p>(по классификации Всемирной федерации кошек)</p></label
-          >
-          <select name="Порода" id="breed">
-            <option value="firstOption">Длинношёрстная</option>
-            <option value="secondOption">Полудлинношёрстная</option>
-            <option value="thirdOption">Короткошёрстная</option>
-            <option value="fourthOption">Ориентальная короткошёрстная</option>
-          </select>
-        </fieldset>
-      </form>
-
-      <form action="">
-        <fieldset>
-          <h2>Пол питомца</h2>
-          <label for="sex1">Самец</label>
-          <input type="radio" name="which" id="sex1" /> <br />
-          <label for="sex2">Самка</label>
-          <input type="radio" name="which" id="sex2" />
-        </fieldset>
-      </form>
-
-      <form action="">
-        <fieldset>
-          <h2>Тип питания</h2>
-          <input type="checkbox" id="food1" />
-          <label for="food1">Сухой корм</label> <br />
-          <input type="checkbox" id="food2" />
-          <label for="food2">Влажный корм</label> <br />
-          <input type="checkbox" id="food3" />
-          <label for="food3">Натуральный корм</label> <br />
-          <input type="checkbox" id="food4" />
-          <label for="food4">Смешанное питание</label>
-        </fieldset>
-      </form>
-
-      <form action="">
-        <fieldset>
-          <h2>Комментарий</h2>
-          <label for="comment">Напишите о своём питомце</label> <br />
-          <textarea name="Комментарий" id="comment" cols="30" rows="10">
+        <form action="#">
+          <div class="questionnaire__form">
+            <h2>Комментарий</h2>
+            <p><label for="comment">Напишите о своём питомце</label></p>
+            <textarea name="Комментарий" id="comment" rows="5">
 Пару строк о любимце</textarea
+            >
+          </div>
+        </form>
+
+        <form action="#">
+          <div class="questionnaire__form">
+            <label for="photo"><h2>Фото вашего питомца</h2></label>
+            <input type="file" id="photo" />
+          </div>
+        </form>
+
+        <div class="questionnaire__form">
+          <label for="submit"><h2>Отправить</h2></label>
+          <button
+            class="questionnaire__btn"
+            id="submit"
+            onclick="checkValidity()"
           >
-        </fieldset>
-      </form>
-
-      <form action="">
-        <div>
-          <label for="photo"><h2>Фото вашего питомца</h2></label>
-          <input type="file" id="photo" />
+            OK!
+          </button>
         </div>
-      </form>
-
-      <div>
-        <label for="submit"><h2>Отправить</h2></label>
-        <button id="submit" onclick="checkValidity()">submit</button>
       </div>
     </div>
 

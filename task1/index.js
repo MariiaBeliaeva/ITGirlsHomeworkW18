@@ -1,6 +1,6 @@
 const checkValidity = (value) => {
   if (value === "") {
-    return false;
+    alert("Поля не заполнены");
   }
   return true;
 };
